@@ -21,15 +21,8 @@ public class ItemService {
         return itemRepository.save(producto);
     }
 
-    public Item deleteById(int id) {
-        Optional<Item> productoOptional = itemRepository.findById(String.valueOf(id));
-
-        if (productoOptional.isPresent()) {
-            Item producto = productoOptional.get();
-            itemRepository.delete(producto);
-            return producto;
-        }
-        return null;
+    public void deleteById(String id) {
+        itemRepository.deleteById(id);
     }
 
 public List<Item> findAll() {

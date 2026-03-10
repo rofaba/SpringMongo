@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface ItemRepository extends MongoRepository<Item, String> {
 
-    List<Item> findById(int Id);
 
     List<Item> findByCategory(String categoria);
 

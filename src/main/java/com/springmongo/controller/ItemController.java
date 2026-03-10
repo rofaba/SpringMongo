@@ -14,10 +14,9 @@ import java.util.List;
 public class ItemController {
     private final ItemService itemService;
 
-    public ItemController(ItemService itemService, ItemService itemService1) {
+    public ItemController(ItemService itemService) {
         this.itemService = itemService;
     }
-
     @PostMapping("items")
     public ResponseEntity<Item> crear(@Valid @RequestBody Item producto) {
         Item nuevo = itemService.crear(producto);
@@ -46,10 +45,9 @@ public class ItemController {
 
     @DeleteMapping("/items/{id}")
     public ResponseEntity<String> eliminar(@PathVariable String id) {
-        Item eliminado = itemService.deleteById(Integer.parseInt(id));
+        itemService.deleteById(String.valueOf(Integer.parseInt(id)));
         return ResponseEntity.ok("Producto eliminado");
     }
-
 
     @PutMapping("/admin/items/{category}")
     //actualizar la categoria de todos los productos de una categoria

@@ -1,12 +1,12 @@
 package com.springmongo.model;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 @Document(collection = "items")
 @Data
 @NoArgsConstructor
@@ -19,7 +19,7 @@ public class Item {
     @NotBlank(message = "El nombre es obligatorio")
     private String title;
 
-    @NotBlank
+    @NotNull
     private Double price;
 
     @NotBlank
@@ -28,10 +28,9 @@ public class Item {
     @NotBlank
     private String description;
 
-    @NotBlank
+    @NotNull
     private Double rate;
 
-    @NotBlank
     private int count;
 
     @NotBlank
@@ -41,7 +40,7 @@ public class Item {
     private String manufacturer;
 
     @NotBlank
-    private String EAN;
+    private String ean;
 
     @NotBlank
     private String image;
