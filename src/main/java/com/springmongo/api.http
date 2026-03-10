@@ -1,0 +1,16 @@
+### crear item
+POST http://localhost:8080/api/items
+Content-Type: application/json
+
+{
+  "title": "Gaming Mouse",
+  "price": 49.99,
+  "category": "electronics",
+  "description": "High precision gaming mouse",
+  "rate": 4.5,
+  "count": 120,
+  "color": "black",
+  "manufacturer": "Logitech",
+  "ean": "1234567890123",
+  "image": "mouse.jpg"
+}
